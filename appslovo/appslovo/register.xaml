@@ -1,0 +1,94 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appslovo.register"
+             xmlns:effects="clr-namespace:PlainEntryAndroidSample.Effects"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="entrystyle" TargetType="Entry">
+
+                <Setter Property="TextColor" Value="#3472ED" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="PlaceholderColor" Value="#77787A" />
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+            <Style x:Key="appslovo.register" TargetType="AbsoluteLayout">
+                <Setter Property="Background"  Value="#111417"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Label x:Name="input_errors"
+                WidthRequest="1600"
+               TextColor="red"
+               Text="" 
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds=".5,.64,.8,.1"
+               HorizontalTextAlignment="Center"/>
+            <Label
+                Text="Quody"
+                TextColor="White"
+                FontSize="40"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds=".5,.06,.26,.06"
+                FontFamily="Inter"/>
+
+
+
+            <Frame AbsoluteLayout.LayoutFlags="PositionProportional"
+                   AbsoluteLayout.LayoutBounds=".5,.46,230,50"
+                   Padding="10,0,0,0"
+
+                   HasShadow="true"
+                   BackgroundColor="#222528"
+                   CornerRadius="5">
+
+                <Entry
+Style="{StaticResource entrystyle}"
+                    CharacterSpacing="1"
+                    FontFamily="Inter"
+                    FontSize="20"
+            Placeholder="Username"
+            Margin="0,0,0,0"
+            WidthRequest="170"
+            x:Name="enrty_username"
+            Keyboard="Default"
+            Completed="go_to_entry_invite">
+                    <Entry.Effects>
+                        <effects:PlainEntry/>
+                    </Entry.Effects>
+                </Entry>
+            </Frame>
+            <Frame AbsoluteLayout.LayoutFlags="PositionProportional"
+                   AbsoluteLayout.LayoutBounds=".5,.54,230,50"
+                   Padding="10,0,0,0"
+                    
+                   HasShadow="true"
+                   BackgroundColor="#222528"
+                   CornerRadius="5">
+
+                <Entry
+Style="{StaticResource entrystyle}"
+                    CharacterSpacing="1"
+            Placeholder="Invite code"
+            FontFamily="Inter"
+                    FontSize="20"        
+            Margin="0,0,0,0"
+            WidthRequest="170"
+           x:Name="enrty_invitecode"
+                    Completed="send_user_insertion"
+            Keyboard="Default">
+                    <Entry.Effects>
+                        <effects:PlainEntry/>
+                    </Entry.Effects>
+                </Entry>
+            </Frame>
+
+            <Label x:Name="phone_number_label" Text="" IsVisible="False"/>
+
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appslovo.confirm"
+             xmlns:effects="clr-namespace:PlainEntryAndroidSample.Effects"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <Style x:Key="entrystyle" TargetType="Entry">
+
+                <Setter Property="TextColor" Value="#3472ED" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="PlaceholderColor" Value="#77787A" />
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+            <Style x:Key="appslovo.confirm" TargetType="AbsoluteLayout">
+                <Setter Property="Background"  Value="#131518"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Label
+                Text="Quody"
+                TextColor="White"
+                FontSize="40"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds=".5,.06,.26,.06"
+                FontFamily="Inter"/>
+            <Label x:Name="info_label"
+                WidthRequest="1600"
+               TextColor="Wheat"
+               Text="" />
+            <Label x:Name="confirm_input_error"
+                WidthRequest="1600"
+               TextColor="red"
+               Text="" 
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds=".5,.6,.8,.1"
+               HorizontalTextAlignment="Center"/>
+
+            <Image  x:Name="image2"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.19,.28,.28"/>
+
+
+            <Frame AbsoluteLayout.LayoutFlags="PositionProportional"
+                   AbsoluteLayout.LayoutBounds=".5,.5,250,50"
+                   Padding="0,0,0,0"
+                   HasShadow="true"
+                   BackgroundColor="#222528"
+                   CornerRadius="9"
+                  >
+
+                <Entry
+Style="{StaticResource entrystyle}"
+                    CharacterSpacing="1"
+            MaxLength="6"    
+                    FontFamily="Inter"
+                    HorizontalTextAlignment="Center"
+            Placeholder="Sms-code"
+            Margin="0,0,0,0"
+            WidthRequest="170"
+            Completed="send_user_confirmation"
+            FontSize="20"
+            Keyboard="Telephone">
+                    <Entry.Effects>
+                        <effects:PlainEntry/>
+                    </Entry.Effects>
+                </Entry>
+            </Frame>
+
+
+            <Label x:Name="phone_number_label" Text="" IsVisible="False"/>
+        </AbsoluteLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

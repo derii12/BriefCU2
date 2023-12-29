@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="appslovo.PhoneLog"
+             xmlns:effects="clr-namespace:PlainEntryAndroidSample.Effects"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="entrystyle" TargetType="Entry">
+
+                <Setter Property="TextColor" Value="#3472ED" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="PlaceholderColor" Value="#77787A" />
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+            <Style x:Key="appslovo.PhoneLog" TargetType="AbsoluteLayout">
+                <Setter Property="Background"  Value="#111417"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="phone_input_error"
+                WidthRequest="1600"
+               TextColor="red"
+               Text="" 
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds=".5,.61,.4,.06"
+               HorizontalTextAlignment="Center"/>
+            <Label
+                Text="Quody"
+                TextColor="White"
+                FontSize="40"
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                FontFamily="Inter"/>
+
+
+
+            <Frame  HasShadow="False"
+                   Padding="0,5,0,10"
+                   BackgroundColor="#222528"
+                   CornerRadius="9"
+                HorizontalOptions="CenterAndExpand"
+                WidthRequest="251"
+                VerticalOptions="CenterAndExpand" Margin="0,-82,0,0">
+                <StackLayout>
+                    <Entry HeightRequest="50"
+Style="{StaticResource entrystyle}"
+                    CharacterSpacing="1"
+            Placeholder="Phone number"
+            MaxLength="12"
+            x:Name="enrt"
+            Keyboard="Telephone"
+            Completed="getid"
+                        VerticalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    FontFamily="Inter"
+                    FontSize="20">
+                    <Entry.Effects>
+                        <effects:PlainEntry/>
+                    </Entry.Effects>
+                </Entry>
+                    <BoxView VerticalOptions="EndAndExpand" WidthRequest="500" HeightRequest="10" BackgroundColor="#111417" Margin="0,0,0,0"></BoxView>
+                    </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
