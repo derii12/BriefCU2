@@ -75,7 +75,6 @@
     <Resource Include="menubutton.png" />
     <Resource Include="right.png" />
     <Resource Include="SwipePages.cs" />
-    <Resource Include="tri poloski.png" />
     <Resource Include="tripoloski.png" />
   </ItemGroup>
   <ItemGroup>
